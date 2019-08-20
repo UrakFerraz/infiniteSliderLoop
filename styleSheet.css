@@ -1,0 +1,181 @@
+:root {
+	--darkBlue: #160f30;
+	--darkGray: #373640;
+	--darkestGray: #252525;
+	--mediumGrayColor: #63707e;
+	--lightGrayColor: #e9e5dd;
+	--redColor: #ed3833;
+	--greenColor: #9cf196;
+	--blueColor: #7ecfc0;
+	--yelowColor: #fdcb6e;
+	--orangeColor: #ef7e56;
+}
+
+.fullContainer {
+	background-color: var(--darkestGray);
+	width: 100vw;
+}
+
+html, body, div, span, ul, li, h1, h2, h3, h4, h5, p, svg, section, header, footer, a, button {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	transition: 0.5s ease-out all;
+}
+
+html {
+	background: var(--darkestGray);
+}
+
+.boxModel {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+}
+
+.boxModelFlex {
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.boxModelGrid {
+	position: relative;
+	display: grid;
+	box-sizing: border-box;
+}
+
+h1 {
+	font-family: 'Germania One', cursive;
+	font-size: 50px;
+	color: var(--orangeColor);
+}
+
+p {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-size: 20px;
+	line-height: 1.6;
+	color: var(--lightGrayColor);
+	font-weight: 200;
+
+}
+
+h2 {
+	font-family: 'Bai Jamjuree', sans-serif;
+	font-size: 30px;
+	color: var(--lightGrayColor);
+}
+
+h3 {
+	font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+span {
+	font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.ArrowSvg {
+	fill: var(--mediumGrayColor);
+	pointer-events: none;
+}
+
+.slidesBtnsWrapper {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	justify-content: space-between;
+	padding: 20px;
+	align-self: center;
+	align-items: center;
+	z-index: 100;
+}
+
+#leftSlideArrowBtn,
+#rightSlideArrowBtn {
+	cursor: pointer;
+	pointer-events: all;
+	z-index: 10;
+}
+
+#leftSlideArrowBtn:hover svg,
+#rightSlideArrowBtn:hover svg {
+	fill: var(--redColor);
+	transform: scale(0.85);
+}
+
+.slideUnit {
+	padding: 5vh 20vw;
+	grid-template-columns: repeat (2, 1fr);
+	grid-template-rows: auto auto 150px auto auto 1fr;
+	width: 100%;
+	transition: all 1s cubic-bezier(0.86, 0, 0.07, 1);
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-delay: 0.3s;
+	transform: perspective(1100px);
+}
+
+.slideImgWrapper {
+	grid-column: 1 / -1;
+	grid-row: 1 / 4;
+	overflow: hidden;
+	width: 100%;
+	height: 40vw;
+	border-radius: 10px;
+	box-shadow: 0 20px 60px rgba(0,0,0,.5);
+	transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+	animation-duration: 0.4s;
+	animation-fill-mode: both;
+	animation-delay: 0.1s;
+	transform: perspective(1100px);
+}
+
+#textTitle {
+	transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+	animation-duration: 0.3s;
+	animation-fill-mode: both;
+	animation-delay: 0.2s;
+	transform: perspective(1100px);
+}
+
+#textLead {
+	transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	animation-delay: 0.1s;
+	transform: perspective(1100px);
+}
+
+#textText {
+	transition: all 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+	animation-duration: 0.3s;
+	animation-fill-mode: both;
+	animation-delay: 0.1s;
+	transform: perspective(1100px);
+}
+
+.slideImgWrapper amp-img {
+	object-fit: cover;
+	object-position: 50% 50%;
+	position: absolute;
+}
+
+.slideTextContent {
+	grid-row-gap: 30px;
+	grid-auto-flow: row;
+	grid-column: 1 / -1;
+	grid-row: 2 / 7;
+	padding: 30px;
+	margin: 40px;
+	background-image: linear-gradient(to top, rgba(20,20,20,.9) 0%, rgba(0,0,0,.9) 100%);
+	border-radius: 10px;
+	align-self: start;
+}
+
+#sliderContainer {
+	grid-auto-flow: column;
+	width: 100%;
+	overflow: hidden;
+	grid-auto-columns: 100vw;
+}
